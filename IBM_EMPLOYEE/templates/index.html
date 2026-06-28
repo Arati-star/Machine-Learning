@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Attrition Prediction</title>
+</head>
+<body>
+
+    <h1>Employee Attrition Prediction</h1>
+
+    <form action="/predict" method="post">
+
+        <label>Age:</label><br>
+        <input type="number" name="Age" required><br><br>
+
+        <label>Monthly Income:</label><br>
+        <input type="number" name="MonthlyIncome" required><br><br>
+
+        <label>Over Time:</label><br>
+        <select name="OverTime">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select><br><br>
+
+        <label>Job Satisfaction (1-4):</label><br>
+        <input type="number" name="JobSatisfaction" min="1" max="4" required><br><br>
+
+        <label>Years At Company:</label><br>
+        <input type="number" name="YearsAtCompany" required><br><br>
+
+        <label>Total Working Years:</label><br>
+        <input type="number" name="TotalWorkingYears" required><br><br>
+
+        <label>Job Level:</label><br>
+        <input type="number" name="JobLevel" min="1" max="5" required><br><br>
+
+        <label>Department:</label><br>
+        <select name="Department">
+            <option value="Sales">Sales</option>
+            <option value="Research & Development">Research & Development</option>
+            <option value="Human Resources">Human Resources</option>
+        </select><br><br>
+
+        <input type="submit" value="Predict">
+
+    </form>
+
+    <h2>{{ prediction_text }}</h2>
+
+</body>
+</html>
