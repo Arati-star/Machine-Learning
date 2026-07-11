@@ -1,9 +1,16 @@
+from anyio import Path
 import streamlit as st
 import pandas as pd
 import joblib
 
+# Get the folder where app.py is located
+BASE_DIR = Path(__file__).resolve().parent
+
+# Build the full path to the model
+MODEL_PATH = BASE_DIR / "customer_churn_pipeline.joblib"
+
 # Load Pipeline
-pipeline = joblib.load("customer_churn_pipeline.joblib")
+pipeline = joblib.load(MODEL_PATH)
 
 
 # ---------------- Sidebar ----------------
